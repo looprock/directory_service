@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  label {
+    @apply text-gray-900;
+  }
+}
+
+:root {
+  --foreground-rgb: 229, 231, 235;
+  --background-rgb: 31, 41, 55;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+} 

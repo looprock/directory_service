@@ -1,0 +1,4 @@
+boto3==1.26.137
+aws-lambda-powertools==2.22.0
+python-jose==3.3.0
+aws-xray-sdk==2.12.0 
