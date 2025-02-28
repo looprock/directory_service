@@ -35,4 +35,4 @@ jobs:
           tags: ghcr.io/looprock/directory_service_frontend:${{inputs.version_name}}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          file: Dockerfile
+          file: ./frontend/Dockerfile
