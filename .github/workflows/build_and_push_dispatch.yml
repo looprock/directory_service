@@ -12,7 +12,7 @@ jobs:
     permissions: write-all
     defaults:
       run:
-        working-directory: './frontend'
+        working-directory: './'
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -29,10 +29,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./frontend
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/looprock/directory_service_frontend:${{inputs.version_name}}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          file: ./Dockerfile
+          file: Dockerfile
