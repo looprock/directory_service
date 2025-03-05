@@ -33,7 +33,7 @@ If you’re a global admin, you will have access to the admin management interfa
 
 # Example usage
 
-![Alt text](img/slack_approval_workflow.jpg.jpg?raw=true "Slack approval example")
+![Alt text](img/slack_approval_workflow.jpg?raw=true "Slack approval example")
 
 ## Order of operations
 
