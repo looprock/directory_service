@@ -1,6 +1,6 @@
 # directory_service
 
-In order to facilitate routing of approvals I built a directory service. The directory service is a thin overlay of AWS Lambda and API Gateway managing data in DynamoDB. It’s designed to be both simple and flexible. The main point of interaction is intended to be the API, however there is also a user interface designed for humans to manage the data. It’s designed to be conceptually similar to tags, allowing for arbitrary one to many or many to many relationships.
+In order to facilitate routing of notifications and approvals I built a minimal directory service. It provided both contacts and permissions abstractions allowing it to sit in the middle of multiple services as glue, as well as an abstracted RBAC provider. Directory service is a thin overlay of AWS Lambda and API Gateway managing data in DynamoDB. It’s designed to be both simple, flexible and accessible via standard API calls. The main point of interaction is intended to be the API, however there is also a user interface designed for humans to manage the data. It’s designed to be conceptually similar to tags, allowing for arbitrary one to many or many to many relationships.
 
 Access to the API is restricted via two API keys, a public key which allows GET requests and an admin key which allows POST and DELETE requests. The frontend uses google for authentication but also requires you to be a full or group admin in the directory service itself.
 
