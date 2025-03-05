@@ -33,6 +33,8 @@ If you’re a global admin, you will have access to the admin management interfa
 
 # Example usage
 
+Here's how you might use the directory service to provide contact information and permissions inside a slack based approval pipeline.
+
 ![Alt text](img/slack_approval_workflow.jpg?raw=true "Slack approval example")
 
 ## Order of operations
