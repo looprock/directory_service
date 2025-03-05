@@ -30,3 +30,18 @@ Permissions are tied to groups and query-able by a service and an action. The ke
 If you’re a global admin, you will have access to the admin management interface giving you the ability to add new global and group admins.
 
 ![Alt text](img/admin.jpg?raw=true "Admin interface")
+
+# Example usage
+
+![Alt text](img/slack_approval_workflow.jpg.jpg?raw=true "Slack approval example")
+
+## Order of operations
+
+1) An AWS Code Pipeline with an approval step executes
+2) An event is triggered in Event Bridge, which is detected by the Notifier Lambda
+3) The Notifier Lambda reads the routing tag from the pipeline and queries the directory service for the group and contact information of the approvers
+4) The Notifier Lambda sends a message to the group’s slack contact requesting approval
+5) Someone selects Yes or No on the dialog box
+6) The Approval Lambda verifies if the responder is a member of a group that has appropriate permissions to respond to the request
+- If they don’t, a message is sent back to the responder telling them they don’t have permissions
+- If they do, the Approval Lambda sends the Approval/Rejection to the Code Pipeline API and notifies the responder that the request was completed
